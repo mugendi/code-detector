@@ -10,7 +10,13 @@ import fs from 'fs';
 import LineByLineReader from 'line-by-line';
 import { execSync } from 'child_process';
 import shellEscape from 'shell-escape';
-import { path, __dirname } from './path';
+import Path from 'path';
+import { fileURLToPath } from 'url';
+
+export const __filename = fileURLToPath(import.meta.url); 
+export const __dirname = Path.dirname(__filename);
+export const path = Path;
+
 
 const aliases = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, './lib/file-patterns/aliases.json'))
@@ -59,7 +65,7 @@ function readLine(filePath) {
   if (!fs.existsSync(filePath)) {
     throw new Error(`File ${filePath} does not exist!`);
   }
-  
+
   return new Promise((resolve, reject) => {
     const lr = new LineByLineReader(filePath);
     let data = '';
