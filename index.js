@@ -113,14 +113,14 @@ export default async function detect(filePath) {
     throw new Error(`File ${filePath} does not exist!`);
   }
 
-  let lang = await byFileName(filePath);
+  let lang = await byHyperpolyglotAPI(filePath);
 
   if (!lang) {
     lang = await byShebang(filePath);
   }
 
   if (!lang) {
-    lang = await byHyperpolyglotAPI(filePath);
+    lang = await byFileName(filePath);
   }
 
   return lang;
