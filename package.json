@@ -3,16 +3,25 @@
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "build": "npx tsc"
-  },
+  "scripts": {},
   "keywords": [],
-  "author": "",
+  "author": "Anthony Mugendi <ngurumugz@gmail.com>",
   "license": "MIT",
-  "description": "",
   "devDependencies": {},
   "dependencies": {
     "line-by-line": "^0.1.6",
     "shell-escape": "^0.2.0"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "description": "A JavaScript code detector that falls back on hyperpolyglot to ensure accurate code reporting",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mugendi/code-detector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mugendi/code-detector/issues"
+  },
+  "homepage": "https://github.com/mugendi/code-detector#readme"
 }
